@@ -151,6 +151,12 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
+add_executable(rpm_pub src/publisher_rpm.cpp)
+target_link_libraries(rpm_pub ${catkin_LIBRARIES})
+
+add_executable(speed_pub src/subscriber_speed.cpp)
+target_link_libraries(speed_pub ${catkin_LIBRARIES})
+
 #############
 ## Install ##
 #############

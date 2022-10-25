@@ -80,6 +80,16 @@ install/fast: preinstall/fast
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -92,26 +102,16 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
 
-.PHONY : list_install_components/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -124,16 +124,16 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
+# Special rule for the target test
+test/fast: test
 
-.PHONY : rebuild_cache/fast
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -166,21 +166,6 @@ preinstall/fast:
 depend:
 	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
-
-# Convenience name for target.
-first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 first_project/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
@@ -363,6 +348,21 @@ rosgraph_msgs_generate_messages_nodejs/fast:
 .PHONY : rosgraph_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+first_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 first_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : first_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+roscpp_generate_messages_eus: first_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+
+.PHONY : roscpp_generate_messages_eus
+
+# fast build rule for target.
+roscpp_generate_messages_eus/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/roscpp_generate_messages_eus.dir/build.make first_project/CMakeFiles/roscpp_generate_messages_eus.dir/build
+.PHONY : roscpp_generate_messages_eus/fast
+
+# Convenience name for target.
 first_project/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
 	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 first_project/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 .PHONY : first_project/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
@@ -513,6 +513,51 @@ geometry_msgs_generate_messages_eus/fast:
 .PHONY : geometry_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
+first_project/CMakeFiles/rpm_pub.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 first_project/CMakeFiles/rpm_pub.dir/rule
+.PHONY : first_project/CMakeFiles/rpm_pub.dir/rule
+
+# Convenience name for target.
+rpm_pub: first_project/CMakeFiles/rpm_pub.dir/rule
+
+.PHONY : rpm_pub
+
+# fast build rule for target.
+rpm_pub/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/rpm_pub.dir/build.make first_project/CMakeFiles/rpm_pub.dir/build
+.PHONY : rpm_pub/fast
+
+# Convenience name for target.
+first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+.PHONY : first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+rosgraph_msgs_generate_messages_py: first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
+
+.PHONY : rosgraph_msgs_generate_messages_py
+
+# fast build rule for target.
+rosgraph_msgs_generate_messages_py/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make first_project/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
+.PHONY : rosgraph_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+first_project/CMakeFiles/speed_pub.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 first_project/CMakeFiles/speed_pub.dir/rule
+.PHONY : first_project/CMakeFiles/speed_pub.dir/rule
+
+# Convenience name for target.
+speed_pub: first_project/CMakeFiles/speed_pub.dir/rule
+
+.PHONY : speed_pub
+
+# fast build rule for target.
+speed_pub/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/speed_pub.dir/build.make first_project/CMakeFiles/speed_pub.dir/build
+.PHONY : speed_pub/fast
+
+# Convenience name for target.
 first_project/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
 	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 first_project/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
 .PHONY : first_project/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
@@ -527,20 +572,59 @@ rosgraph_msgs_generate_messages_cpp/fast:
 	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make first_project/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
-# Convenience name for target.
-first_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 first_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : first_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+src/publisher_rpm.o: src/publisher_rpm.cpp.o
 
-# Convenience name for target.
-roscpp_generate_messages_eus: first_project/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+.PHONY : src/publisher_rpm.o
 
-.PHONY : roscpp_generate_messages_eus
+# target to build an object file
+src/publisher_rpm.cpp.o:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/rpm_pub.dir/build.make first_project/CMakeFiles/rpm_pub.dir/src/publisher_rpm.cpp.o
+.PHONY : src/publisher_rpm.cpp.o
 
-# fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/roscpp_generate_messages_eus.dir/build.make first_project/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+src/publisher_rpm.i: src/publisher_rpm.cpp.i
+
+.PHONY : src/publisher_rpm.i
+
+# target to preprocess a source file
+src/publisher_rpm.cpp.i:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/rpm_pub.dir/build.make first_project/CMakeFiles/rpm_pub.dir/src/publisher_rpm.cpp.i
+.PHONY : src/publisher_rpm.cpp.i
+
+src/publisher_rpm.s: src/publisher_rpm.cpp.s
+
+.PHONY : src/publisher_rpm.s
+
+# target to generate assembly for a file
+src/publisher_rpm.cpp.s:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/rpm_pub.dir/build.make first_project/CMakeFiles/rpm_pub.dir/src/publisher_rpm.cpp.s
+.PHONY : src/publisher_rpm.cpp.s
+
+src/subscriber_speed.o: src/subscriber_speed.cpp.o
+
+.PHONY : src/subscriber_speed.o
+
+# target to build an object file
+src/subscriber_speed.cpp.o:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/speed_pub.dir/build.make first_project/CMakeFiles/speed_pub.dir/src/subscriber_speed.cpp.o
+.PHONY : src/subscriber_speed.cpp.o
+
+src/subscriber_speed.i: src/subscriber_speed.cpp.i
+
+.PHONY : src/subscriber_speed.i
+
+# target to preprocess a source file
+src/subscriber_speed.cpp.i:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/speed_pub.dir/build.make first_project/CMakeFiles/speed_pub.dir/src/subscriber_speed.cpp.i
+.PHONY : src/subscriber_speed.cpp.i
+
+src/subscriber_speed.s: src/subscriber_speed.cpp.s
+
+.PHONY : src/subscriber_speed.s
+
+# target to generate assembly for a file
+src/subscriber_speed.cpp.s:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f first_project/CMakeFiles/speed_pub.dir/build.make first_project/CMakeFiles/speed_pub.dir/src/subscriber_speed.cpp.s
+.PHONY : src/subscriber_speed.cpp.s
 
 # Help Target
 help:
@@ -550,7 +634,7 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install"
-	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... list_install_components"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... geometry_msgs_generate_messages_cpp"
 	@echo "... geometry_msgs_generate_messages_nodejs"
@@ -563,8 +647,9 @@ help:
 	@echo "... geometry_msgs_generate_messages_lisp"
 	@echo "... roscpp_generate_messages_py"
 	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... list_install_components"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
+	@echo "... rebuild_cache"
+	@echo "... roscpp_generate_messages_eus"
 	@echo "... sensor_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_lisp"
@@ -575,11 +660,18 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... std_msgs_generate_messages_nodejs"
 	@echo "... geometry_msgs_generate_messages_eus"
+	@echo "... rpm_pub"
+	@echo "... edit_cache"
+	@echo "... rosgraph_msgs_generate_messages_py"
+	@echo "... speed_pub"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
 	@echo "... test"
-	@echo "... edit_cache"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... rebuild_cache"
+	@echo "... src/publisher_rpm.o"
+	@echo "... src/publisher_rpm.i"
+	@echo "... src/publisher_rpm.s"
+	@echo "... src/subscriber_speed.o"
+	@echo "... src/subscriber_speed.i"
+	@echo "... src/subscriber_speed.s"
 .PHONY : help
 
 

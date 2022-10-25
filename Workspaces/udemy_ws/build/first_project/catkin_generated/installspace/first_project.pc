@@ -1,0 +1,8 @@
+prefix=/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/install
+
+Name: first_project
+Description: Description of first_project
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

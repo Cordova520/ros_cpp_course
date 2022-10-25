@@ -1,0 +1,11 @@
+rosdistro: 'noetic
+
+  '
+roslaunch:
+  uris:
+    host_cordova520__40281: http://cordova520:40281/
+rosversion: '1.15.14
+
+  '
+run_id: 17fa5a68-541a-11ed-994c-89dfc2b5afd6
+wheel_radius: 0.2

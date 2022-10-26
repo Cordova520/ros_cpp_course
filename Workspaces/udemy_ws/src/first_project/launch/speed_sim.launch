@@ -1,0 +1,5 @@
+<launch>
+    <param name="wheel_radius" value="0.125" type="double"/>
+    <node name="rpm_pub_node" pkg="first_project" type="rpm_pub" />
+    <node name="speed_sub_node" pkg="first_project" type="speed_pub"/>
+</launch>

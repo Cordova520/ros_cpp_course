@@ -1,3 +1,0 @@
-<launch>
-    <node name="rpm_pub_node" pkg="first_project" type="rpm_pub" />
-</launch>

@@ -56,6 +56,18 @@ CMAKE_BINARY_DIR = /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/ud
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # Special rule for the target install/local
 install/local: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
@@ -79,16 +91,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
-
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
-
-.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -123,17 +125,15 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,6 +168,21 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/service_server.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/service_server.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/service_server.dir/rule
+
+# Convenience name for target.
+service_server: udemy_cpp_pkg/CMakeFiles/service_server.dir/rule
+
+.PHONY : service_server
+
+# fast build rule for target.
+service_server/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/service_server.dir/build.make udemy_cpp_pkg/CMakeFiles/service_server.dir/build
+.PHONY : service_server/fast
+
+# Convenience name for target.
 udemy_cpp_pkg/CMakeFiles/subscriber.dir/rule:
 	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/subscriber.dir/rule
 .PHONY : udemy_cpp_pkg/CMakeFiles/subscriber.dir/rule
@@ -183,6 +198,156 @@ subscriber/fast:
 .PHONY : subscriber/fast
 
 # Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_generate_messages: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages.dir/rule
+
+.PHONY : udemy_cpp_pkg_generate_messages
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_cpp.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_cpp.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_cpp.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_generate_messages_cpp: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_cpp.dir/rule
+
+.PHONY : udemy_cpp_pkg_generate_messages_cpp
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages_cpp/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_cpp.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_cpp.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages_cpp/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_nodejs.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_nodejs.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_generate_messages_nodejs: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_nodejs.dir/rule
+
+.PHONY : udemy_cpp_pkg_generate_messages_nodejs
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages_nodejs/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_nodejs.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_nodejs.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages_nodejs/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gencpp.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gencpp.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gencpp.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_gencpp: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gencpp.dir/rule
+
+.PHONY : udemy_cpp_pkg_gencpp
+
+# fast build rule for target.
+udemy_cpp_pkg_gencpp/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gencpp.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gencpp.dir/build
+.PHONY : udemy_cpp_pkg_gencpp/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_py.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_py.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_py.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_generate_messages_py: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_py.dir/rule
+
+.PHONY : udemy_cpp_pkg_generate_messages_py
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages_py/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_py.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_py.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages_py/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_eus.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_eus.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_generate_messages_eus: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_eus.dir/rule
+
+.PHONY : udemy_cpp_pkg_generate_messages_eus
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages_eus/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_eus.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_eus.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages_eus/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck.dir/rule
+
+# Convenience name for target.
+_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck: udemy_cpp_pkg/CMakeFiles/_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck.dir/rule
+
+.PHONY : _udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck
+
+# fast build rule for target.
+_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck.dir/build.make udemy_cpp_pkg/CMakeFiles/_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck.dir/build
+.PHONY : _udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_geneus.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_geneus.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_geneus.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_geneus: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_geneus.dir/rule
+
+.PHONY : udemy_cpp_pkg_geneus
+
+# fast build rule for target.
+udemy_cpp_pkg_geneus/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_geneus.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_geneus.dir/build
+.PHONY : udemy_cpp_pkg_geneus/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_lisp.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_lisp.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_generate_messages_lisp: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_lisp.dir/rule
+
+.PHONY : udemy_cpp_pkg_generate_messages_lisp
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages_lisp/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_lisp.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_lisp.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages_lisp/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genlisp.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genlisp.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genlisp.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_genlisp: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genlisp.dir/rule
+
+.PHONY : udemy_cpp_pkg_genlisp
+
+# fast build rule for target.
+udemy_cpp_pkg_genlisp/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genlisp.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genlisp.dir/build
+.PHONY : udemy_cpp_pkg_genlisp/fast
+
+# Convenience name for target.
 udemy_cpp_pkg/CMakeFiles/publisher.dir/rule:
 	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/publisher.dir/rule
 .PHONY : udemy_cpp_pkg/CMakeFiles/publisher.dir/rule
@@ -196,6 +361,51 @@ publisher: udemy_cpp_pkg/CMakeFiles/publisher.dir/rule
 publisher/fast:
 	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/publisher.dir/build.make udemy_cpp_pkg/CMakeFiles/publisher.dir/build
 .PHONY : publisher/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/service_client.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/service_client.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/service_client.dir/rule
+
+# Convenience name for target.
+service_client: udemy_cpp_pkg/CMakeFiles/service_client.dir/rule
+
+.PHONY : service_client
+
+# fast build rule for target.
+service_client/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/service_client.dir/build.make udemy_cpp_pkg/CMakeFiles/service_client.dir/build
+.PHONY : service_client/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gennodejs.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gennodejs.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gennodejs.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_gennodejs: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gennodejs.dir/rule
+
+.PHONY : udemy_cpp_pkg_gennodejs
+
+# fast build rule for target.
+udemy_cpp_pkg_gennodejs/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gennodejs.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gennodejs.dir/build
+.PHONY : udemy_cpp_pkg_gennodejs/fast
+
+# Convenience name for target.
+udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genpy.dir/rule:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genpy.dir/rule
+.PHONY : udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genpy.dir/rule
+
+# Convenience name for target.
+udemy_cpp_pkg_genpy: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genpy.dir/rule
+
+.PHONY : udemy_cpp_pkg_genpy
+
+# fast build rule for target.
+udemy_cpp_pkg_genpy/fast:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genpy.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genpy.dir/build
+.PHONY : udemy_cpp_pkg_genpy/fast
 
 src/publisher.o: src/publisher.cpp.o
 
@@ -223,6 +433,60 @@ src/publisher.s: src/publisher.cpp.s
 src/publisher.cpp.s:
 	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/publisher.dir/build.make udemy_cpp_pkg/CMakeFiles/publisher.dir/src/publisher.cpp.s
 .PHONY : src/publisher.cpp.s
+
+src/service_client.o: src/service_client.cpp.o
+
+.PHONY : src/service_client.o
+
+# target to build an object file
+src/service_client.cpp.o:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/service_client.dir/build.make udemy_cpp_pkg/CMakeFiles/service_client.dir/src/service_client.cpp.o
+.PHONY : src/service_client.cpp.o
+
+src/service_client.i: src/service_client.cpp.i
+
+.PHONY : src/service_client.i
+
+# target to preprocess a source file
+src/service_client.cpp.i:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/service_client.dir/build.make udemy_cpp_pkg/CMakeFiles/service_client.dir/src/service_client.cpp.i
+.PHONY : src/service_client.cpp.i
+
+src/service_client.s: src/service_client.cpp.s
+
+.PHONY : src/service_client.s
+
+# target to generate assembly for a file
+src/service_client.cpp.s:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/service_client.dir/build.make udemy_cpp_pkg/CMakeFiles/service_client.dir/src/service_client.cpp.s
+.PHONY : src/service_client.cpp.s
+
+src/service_server.o: src/service_server.cpp.o
+
+.PHONY : src/service_server.o
+
+# target to build an object file
+src/service_server.cpp.o:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/service_server.dir/build.make udemy_cpp_pkg/CMakeFiles/service_server.dir/src/service_server.cpp.o
+.PHONY : src/service_server.cpp.o
+
+src/service_server.i: src/service_server.cpp.i
+
+.PHONY : src/service_server.i
+
+# target to preprocess a source file
+src/service_server.cpp.i:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/service_server.dir/build.make udemy_cpp_pkg/CMakeFiles/service_server.dir/src/service_server.cpp.i
+.PHONY : src/service_server.cpp.i
+
+src/service_server.s: src/service_server.cpp.s
+
+.PHONY : src/service_server.s
+
+# target to generate assembly for a file
+src/service_server.cpp.s:
+	cd /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build && $(MAKE) -f udemy_cpp_pkg/CMakeFiles/service_server.dir/build.make udemy_cpp_pkg/CMakeFiles/service_server.dir/src/service_server.cpp.s
+.PHONY : src/service_server.cpp.s
 
 src/subscriber.o: src/subscriber.cpp.o
 
@@ -257,18 +521,38 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... install/strip"
 	@echo "... install/local"
 	@echo "... install"
-	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... test"
+	@echo "... service_server"
 	@echo "... subscriber"
-	@echo "... install/strip"
+	@echo "... udemy_cpp_pkg_generate_messages"
+	@echo "... udemy_cpp_pkg_generate_messages_cpp"
+	@echo "... udemy_cpp_pkg_generate_messages_nodejs"
+	@echo "... udemy_cpp_pkg_gencpp"
+	@echo "... udemy_cpp_pkg_generate_messages_py"
+	@echo "... udemy_cpp_pkg_generate_messages_eus"
+	@echo "... _udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck"
+	@echo "... udemy_cpp_pkg_geneus"
+	@echo "... test"
+	@echo "... udemy_cpp_pkg_generate_messages_lisp"
+	@echo "... udemy_cpp_pkg_genlisp"
 	@echo "... publisher"
+	@echo "... service_client"
+	@echo "... udemy_cpp_pkg_gennodejs"
+	@echo "... list_install_components"
+	@echo "... udemy_cpp_pkg_genpy"
 	@echo "... src/publisher.o"
 	@echo "... src/publisher.i"
 	@echo "... src/publisher.s"
+	@echo "... src/service_client.o"
+	@echo "... src/service_client.i"
+	@echo "... src/service_client.s"
+	@echo "... src/service_server.o"
+	@echo "... src/service_server.i"
+	@echo "... src/service_server.s"
 	@echo "... src/subscriber.o"
 	@echo "... src/subscriber.i"
 	@echo "... src/subscriber.s"

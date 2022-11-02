@@ -636,6 +636,19 @@ rosgraph_msgs_generate_messages_cpp/fast:
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named service_server
+
+# Build rule for target.
+service_server: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 service_server
+.PHONY : service_server
+
+# fast build rule for target.
+service_server/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/service_server.dir/build.make udemy_cpp_pkg/CMakeFiles/service_server.dir/build
+.PHONY : service_server/fast
+
+#=============================================================================
 # Target rules for targets named subscriber
 
 # Build rule for target.
@@ -649,6 +662,136 @@ subscriber/fast:
 .PHONY : subscriber/fast
 
 #=============================================================================
+# Target rules for targets named udemy_cpp_pkg_generate_messages
+
+# Build rule for target.
+udemy_cpp_pkg_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_generate_messages
+.PHONY : udemy_cpp_pkg_generate_messages
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named udemy_cpp_pkg_generate_messages_cpp
+
+# Build rule for target.
+udemy_cpp_pkg_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_generate_messages_cpp
+.PHONY : udemy_cpp_pkg_generate_messages_cpp
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages_cpp/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_cpp.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_cpp.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named udemy_cpp_pkg_generate_messages_nodejs
+
+# Build rule for target.
+udemy_cpp_pkg_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_generate_messages_nodejs
+.PHONY : udemy_cpp_pkg_generate_messages_nodejs
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages_nodejs/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_nodejs.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_nodejs.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named udemy_cpp_pkg_gencpp
+
+# Build rule for target.
+udemy_cpp_pkg_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_gencpp
+.PHONY : udemy_cpp_pkg_gencpp
+
+# fast build rule for target.
+udemy_cpp_pkg_gencpp/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gencpp.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gencpp.dir/build
+.PHONY : udemy_cpp_pkg_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named udemy_cpp_pkg_generate_messages_py
+
+# Build rule for target.
+udemy_cpp_pkg_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_generate_messages_py
+.PHONY : udemy_cpp_pkg_generate_messages_py
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages_py/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_py.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_py.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named udemy_cpp_pkg_generate_messages_eus
+
+# Build rule for target.
+udemy_cpp_pkg_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_generate_messages_eus
+.PHONY : udemy_cpp_pkg_generate_messages_eus
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages_eus/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_eus.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_eus.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck
+
+# Build rule for target.
+_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck
+.PHONY : _udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck
+
+# fast build rule for target.
+_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck.dir/build.make udemy_cpp_pkg/CMakeFiles/_udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck.dir/build
+.PHONY : _udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck/fast
+
+#=============================================================================
+# Target rules for targets named udemy_cpp_pkg_geneus
+
+# Build rule for target.
+udemy_cpp_pkg_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_geneus
+.PHONY : udemy_cpp_pkg_geneus
+
+# fast build rule for target.
+udemy_cpp_pkg_geneus/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_geneus.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_geneus.dir/build
+.PHONY : udemy_cpp_pkg_geneus/fast
+
+#=============================================================================
+# Target rules for targets named udemy_cpp_pkg_generate_messages_lisp
+
+# Build rule for target.
+udemy_cpp_pkg_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_generate_messages_lisp
+.PHONY : udemy_cpp_pkg_generate_messages_lisp
+
+# fast build rule for target.
+udemy_cpp_pkg_generate_messages_lisp/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_lisp.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_generate_messages_lisp.dir/build
+.PHONY : udemy_cpp_pkg_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named udemy_cpp_pkg_genlisp
+
+# Build rule for target.
+udemy_cpp_pkg_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_genlisp
+.PHONY : udemy_cpp_pkg_genlisp
+
+# fast build rule for target.
+udemy_cpp_pkg_genlisp/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genlisp.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genlisp.dir/build
+.PHONY : udemy_cpp_pkg_genlisp/fast
+
+#=============================================================================
 # Target rules for targets named publisher
 
 # Build rule for target.
@@ -660,6 +803,45 @@ publisher: cmake_check_build_system
 publisher/fast:
 	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/publisher.dir/build.make udemy_cpp_pkg/CMakeFiles/publisher.dir/build
 .PHONY : publisher/fast
+
+#=============================================================================
+# Target rules for targets named service_client
+
+# Build rule for target.
+service_client: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 service_client
+.PHONY : service_client
+
+# fast build rule for target.
+service_client/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/service_client.dir/build.make udemy_cpp_pkg/CMakeFiles/service_client.dir/build
+.PHONY : service_client/fast
+
+#=============================================================================
+# Target rules for targets named udemy_cpp_pkg_gennodejs
+
+# Build rule for target.
+udemy_cpp_pkg_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_gennodejs
+.PHONY : udemy_cpp_pkg_gennodejs
+
+# fast build rule for target.
+udemy_cpp_pkg_gennodejs/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gennodejs.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gennodejs.dir/build
+.PHONY : udemy_cpp_pkg_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named udemy_cpp_pkg_genpy
+
+# Build rule for target.
+udemy_cpp_pkg_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 udemy_cpp_pkg_genpy
+.PHONY : udemy_cpp_pkg_genpy
+
+# fast build rule for target.
+udemy_cpp_pkg_genpy/fast:
+	$(MAKE) -f udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genpy.dir/build.make udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genpy.dir/build
+.PHONY : udemy_cpp_pkg_genpy/fast
 
 # Help Target
 help:
@@ -710,8 +892,22 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_py"
 	@echo "... speed_pub"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... service_server"
 	@echo "... subscriber"
+	@echo "... udemy_cpp_pkg_generate_messages"
+	@echo "... udemy_cpp_pkg_generate_messages_cpp"
+	@echo "... udemy_cpp_pkg_generate_messages_nodejs"
+	@echo "... udemy_cpp_pkg_gencpp"
+	@echo "... udemy_cpp_pkg_generate_messages_py"
+	@echo "... udemy_cpp_pkg_generate_messages_eus"
+	@echo "... _udemy_cpp_pkg_generate_messages_check_deps_OddEvenCheck"
+	@echo "... udemy_cpp_pkg_geneus"
+	@echo "... udemy_cpp_pkg_generate_messages_lisp"
+	@echo "... udemy_cpp_pkg_genlisp"
 	@echo "... publisher"
+	@echo "... service_client"
+	@echo "... udemy_cpp_pkg_gennodejs"
+	@echo "... udemy_cpp_pkg_genpy"
 .PHONY : help
 
 

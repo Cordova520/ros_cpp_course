@@ -7,9 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build'
-export ROSLISP_PACKAGE_DIRECTORIES='/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/devel/share/common-lisp'
-export ROS_PACKAGE_PATH="/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/src:$ROS_PACKAGE_PATH"
+export PYTHONPATH="/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/devel/lib/python3/dist-packages:$PYTHONPATH"

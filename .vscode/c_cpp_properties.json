@@ -5,7 +5,8 @@
             "includePath": [
                 "${workspaceFolder}/**",
                 "/opt/ros/noetic/include",
-                "~/basic_ros_ws/devel/include"
+                "~/basic_ros_ws/devel/include",
+                "/usr/local/include/opencv4",
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

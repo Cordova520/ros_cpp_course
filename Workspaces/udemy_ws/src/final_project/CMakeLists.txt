@@ -159,9 +159,13 @@ include_directories(
 #   ${catkin_LIBRARIES}
 # )
 
-# add_executable(turn_camera_service_server src/turn_camera_service_server.cpp)
-# target_link_libraries(turn_camera_service_server ${catkin_LIBRARIES} ${OpenCV_INCLUDE_DIRS})
-# add_dependencies(turn_camera_service_server udemy_cpp_pkg_generate_messages_cpp)
+add_executable(action_server src/action_server.cpp)
+target_link_libraries(action_server ${catkin_LIBRARIES} ${OpenCV_INCLUDE_DIRS})
+add_dependencies(action_server udemy_cpp_pkg_generate_messages_cpp)
+
+add_executable(action_client src/action_client.cpp)
+target_link_libraries(action_client ${catkin_LIBRARIES} ${OpenCV_INCLUDE_DIRS})
+add_dependencies(action_client udemy_cpp_pkg_generate_messages_cpp)
 
 #############
 ## Install ##

@@ -135,6 +135,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/first_project/cmake_install.cmake")
   include("/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/third_project/cmake_install.cmake")
   include("/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_cpp_pkg/cmake_install.cmake")
+  include("/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_sim_pkg/cmake_install.cmake")
 
 endif()
 

@@ -1,2 +1,2 @@
-final_project:first_project:third_project:udemy_cpp_pkg
+final_project:first_project:third_project:udemy_cpp_pkg:udemy_sim_pkg
 -DCATKIN_DEVEL_PREFIX=/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/devel -DCMAKE_INSTALL_PREFIX=/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/install -G Unix Makefiles

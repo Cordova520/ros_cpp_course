@@ -150,3 +150,10 @@
 /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gennodejs.dir
 /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_cpp_pkg/CMakeFiles/list_install_components.dir
 /home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genpy.dir
+/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_sim_pkg/CMakeFiles/install/strip.dir
+/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_sim_pkg/CMakeFiles/install/local.dir
+/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_sim_pkg/CMakeFiles/install.dir
+/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_sim_pkg/CMakeFiles/list_install_components.dir
+/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_sim_pkg/CMakeFiles/rebuild_cache.dir
+/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_sim_pkg/CMakeFiles/edit_cache.dir
+/home/cordova520/Documents/Udemy/ros_cpp_course/Workspaces/udemy_ws/build/udemy_sim_pkg/CMakeFiles/test.dir

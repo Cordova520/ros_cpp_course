@@ -58,6 +58,7 @@ all: final_project/all
 all: first_project/all
 all: third_project/all
 all: udemy_cpp_pkg/all
+all: udemy_sim_pkg/all
 
 .PHONY : all
 
@@ -67,6 +68,7 @@ preinstall: final_project/preinstall
 preinstall: first_project/preinstall
 preinstall: third_project/preinstall
 preinstall: udemy_cpp_pkg/preinstall
+preinstall: udemy_sim_pkg/preinstall
 
 .PHONY : preinstall
 
@@ -81,6 +83,7 @@ clean: final_project/clean
 clean: first_project/clean
 clean: third_project/clean
 clean: udemy_cpp_pkg/clean
+clean: udemy_sim_pkg/clean
 
 .PHONY : clean
 
@@ -304,6 +307,24 @@ udemy_cpp_pkg/clean: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_gennodejs.dir/clean
 udemy_cpp_pkg/clean: udemy_cpp_pkg/CMakeFiles/udemy_cpp_pkg_genpy.dir/clean
 
 .PHONY : udemy_cpp_pkg/clean
+
+#=============================================================================
+# Directory level rules for directory udemy_sim_pkg
+
+# Recursive "all" directory target.
+udemy_sim_pkg/all:
+
+.PHONY : udemy_sim_pkg/all
+
+# Recursive "preinstall" directory target.
+udemy_sim_pkg/preinstall:
+
+.PHONY : udemy_sim_pkg/preinstall
+
+# Recursive "clean" directory target.
+udemy_sim_pkg/clean:
+
+.PHONY : udemy_sim_pkg/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/doxygen.dir
